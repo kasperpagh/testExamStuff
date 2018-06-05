@@ -126,7 +126,7 @@ public class Neo4JTest
         assertThat(list2.size(), equalTo(3));
         assertThat(list2.get(0).toString(), equalTo("{releaseDate=2005-10-01, author={booksWritten=null, name=Hayley, William}, textContent=null, title=Ballads, Founded on Anecdotes Relating to Animals}"));
         assertThat(list.size(), equalTo(40));
-        assertThat(list.get(0).toString(), equalTo("{cityName=Commerce, geoLocation={lang=-118.15979, lat=34.00057}}"));
+        assertThat(list.get(0).toString(), equalTo("{cityName=Young, geoLocation={lang=-57.63333, lat=-32.68333}}"));
     }
 
     @Test

@@ -24,7 +24,7 @@ public class carTest
 
         com.jayway.restassured.RestAssured.given().get("http://localhost:3000/reset");
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\kaspe\\Documents\\Skole\\sem2\\Test\\SeleniumExercise\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/usr/local/share/chromedriver");
         driver = new ChromeDriver();
         driver.get("http://localhost:3000/");
     }
@@ -87,6 +87,7 @@ public class carTest
             WebElement desc = driver.findElement(By.id("description"));
             desc.clear();
             desc.sendKeys("cool car");
+            System.out.println("her er desc: " + desc.getText());
             driver.findElement(By.id("save")).click();
             System.out.println("her er btn: " + driver.findElement(By.id("save")));
             Assert.assertThat(rows.get(1).findElements(By.tagName("td")).get(5).getText(), is("cool car"));

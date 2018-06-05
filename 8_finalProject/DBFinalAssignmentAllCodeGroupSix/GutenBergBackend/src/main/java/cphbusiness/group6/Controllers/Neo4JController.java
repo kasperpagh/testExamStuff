@@ -23,7 +23,7 @@ public class Neo4JController implements I_DBController
 
         Neo4JConnector theOne = new Neo4JConnector();
 
-        Session session = theOne.getNeo4JConnection("bolt://167.99.237.199:7687", "username","password");
+        Session session = theOne.getNeo4JConnection("bolt://167.99.237.199:7687", "neo4j", "jesus");
 
 
         try {
@@ -53,7 +53,7 @@ public class Neo4JController implements I_DBController
     {
         Neo4JConnector theOne = new Neo4JConnector();
 
-        Session session = theOne.getNeo4JConnection("bolt://167.99.237.199:7687", "username","password");
+        Session session = theOne.getNeo4JConnection("bolt://167.99.237.199:7687", "neo4j", "jesus");
 
 
         try {
@@ -81,7 +81,7 @@ public class Neo4JController implements I_DBController
     {
         Neo4JConnector theOne = new Neo4JConnector();
 
-        Session session = theOne.getNeo4JConnection("bolt://167.99.237.199:7687", "username","password");
+        Session session = theOne.getNeo4JConnection("bolt://167.99.237.199:7687", "neo4j", "jesus");
 
 
         try {
@@ -108,7 +108,7 @@ public class Neo4JController implements I_DBController
     {
         Neo4JConnector theOne = new Neo4JConnector();
 
-        Session session = theOne.getNeo4JConnection("bolt://167.99.237.199:7687", "username","password");
+        Session session = theOne.getNeo4JConnection("bolt://167.99.237.199:7687", "neo4j", "jesus");
 
         String arr = "";
         for (I_Book book :books) {
@@ -144,7 +144,7 @@ public class Neo4JController implements I_DBController
     {
         Neo4JConnector theOne = new Neo4JConnector();
 
-        Session session = theOne.getNeo4JConnection("bolt://167.99.237.199:7687","username","password");
+        Session session = theOne.getNeo4JConnection("bolt://167.99.237.199:7687", "neo4j", "jesus");
 
 
         try {

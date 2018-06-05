@@ -32,7 +32,7 @@ public class PSQLController implements I_DBController
         Connection con = null;
         try
         {
-            con = pCon.getPSQLConnection("167.99.237.199:5432", "username","password");
+            con = pCon.getPSQLConnection("167.99.237.199:5432", "postgres", "jesus");
         }
         catch (SQLException e)
         {
@@ -91,7 +91,7 @@ public class PSQLController implements I_DBController
         Connection con = null;
         try
         {
-            con = pCon.getPSQLConnection("167.99.237.199:5432","username","password");
+            con = pCon.getPSQLConnection("167.99.237.199:5432", "postgres", "jesus");
         }
         catch (SQLException e)
         {
@@ -145,7 +145,7 @@ public class PSQLController implements I_DBController
         Connection con = null;
         try
         {
-            con = pCon.getPSQLConnection("167.99.237.199:5432","username","password");
+            con = pCon.getPSQLConnection("167.99.237.199:5432", "postgres", "jesus");
         }
         catch (SQLException e)
         {
@@ -215,7 +215,7 @@ public class PSQLController implements I_DBController
         Connection con = null;
         try
         {
-            con = pCon.getPSQLConnection("167.99.237.199:5432","username","password");
+            con = pCon.getPSQLConnection("167.99.237.199:5432", "postgres", "jesus");
         }
         catch (SQLException e)
         {
@@ -277,7 +277,7 @@ public class PSQLController implements I_DBController
         Connection con = null;
         try
         {
-            con = pCon.getPSQLConnection("167.99.237.199:5432","username","password");
+            con = pCon.getPSQLConnection("167.99.237.199:5432", "postgres", "jesus");
         }
         catch (SQLException e)
         {

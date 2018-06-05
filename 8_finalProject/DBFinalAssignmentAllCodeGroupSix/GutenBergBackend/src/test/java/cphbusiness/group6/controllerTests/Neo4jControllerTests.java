@@ -20,7 +20,8 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class Neo4jControllerTests {
+public class Neo4jControllerTests
+{
 
     static Neo4JConnector morpheus = null;
     static Neo4JController nazi = null;
@@ -28,31 +29,38 @@ public class Neo4jControllerTests {
 
 
     @BeforeClass
-    public static void setup(){
+    public static void setup()
+    {
         morpheus = new Neo4JConnector();
         nazi = new Neo4JController();
-        con = morpheus.getNeo4JConnection("bolt://167.99.237.199:7687", "username","password");
+        con = morpheus.getNeo4JConnection("bolt://167.99.237.199:7687", "neo4j", "jesus");
 
     }
 
     @AfterClass
-    public static void eliminate(){
-        try {
+    public static void eliminate()
+    {
+        try
+        {
             con.close();
             morpheus.closeDriver();
-        } catch (Neo4jException e) {
+        }
+        catch (Neo4jException e)
+        {
             e.printStackTrace();
         }
 
     }
 
     @Test
-    public void getPsqlConnectionTest(){
+    public void getPsqlConnectionTest()
+    {
         assertThat(con, notNullValue());
     }
 
     @Test
-    public void getTheOne1(){
+    public void getTheOne1()
+    {
         List<I_Book> list = nazi.getAllBooksThatMentionCity("Oxford");
         Book book = (Book) list.get(0);
         assertThat(list.size(), equalTo(4340));
@@ -63,17 +71,20 @@ public class Neo4jControllerTests {
     }
 
     @Test
-    public void getTheOneQuery2Test(){
+    public void getTheOneQuery2Test()
+    {
         List list = nazi.getAllCitiesMentionedInBook("The Magna Carta");
         City t_city = (City) list.get(0);
         assertThat(list.size(), equalTo(92));
-        assertThat(t_city.getCityName(),equalTo("Worcester"));
-        assertThat(t_city.getGeoLocation().getLat(),equalTo(-33.64651));
-        assertThat(t_city.getGeoLocation().getLang(),equalTo(19.44852));
+        assertThat(t_city.getCityName(), equalTo("Worcester"));
+        assertThat(t_city.getGeoLocation().getLat(), equalTo(-33.64651));
+        assertThat(t_city.getGeoLocation().getLang(), equalTo(19.44852));
         String str = "";
     }
+
     @Test
-    public void getTheOneQuery3Test(){
+    public void getTheOneQuery3Test()
+    {
         List<I_Book> list1 = nazi.getAllBooksWrittenByAuthor("Hayley, William");
         List<I_City> list2 = nazi.getCitiesFromManyBooks(list1);
         Book book = (Book) list1.get(0);
@@ -84,21 +95,27 @@ public class Neo4jControllerTests {
         assertThat(book.getTitle(), equalTo("Ballads, Founded on Anecdotes Relating to Animals"));
         assertThat(book.getReleaseDate(), equalTo("2005-10-01"));
 
-        assertThat(t_city.getCityName(),equalTo("Commerce"));
-        assertThat(t_city.getGeoLocation().getLat(),equalTo(34.00057));
-        assertThat(t_city.getGeoLocation().getLang(),equalTo(-118.15979));
+        assertThat(t_city.getCityName(), equalTo("Young"));
+        assertThat(t_city.getGeoLocation().getLat(), equalTo(-32.68333));
+        assertThat(t_city.getGeoLocation().getLang(), equalTo(-57.63333));
         String str = "";
     }
+
     @Test
-    public void getTheOneQuery4Test(){
-        List<I_Book> list = nazi.getCitiesCloseToGeoLocation(new Coordinate(52.52437,13.41053));
+    public void getTheOneQuery4Test()
+    {
+        List<I_Book> list = nazi.getCitiesCloseToGeoLocation(new Coordinate(52.52437, 13.41053));
         List<I_City> list1 = nazi.getAllCitiesMentionedInBook(list.get(0).getTitle());
         boolean check = false;
-        for (I_City city: list1) {
-            if(!check){
-                if(Math.sqrt(Math.pow((51.00755-city.getGeoLocation().getLat()),2)+Math.pow((5.58453-city.getGeoLocation().getLang()),2) ) <=1){
+        for (I_City city : list1)
+        {
+            if (!check)
+            {
+                if (Math.sqrt(Math.pow((51.00755 - city.getGeoLocation().getLat()), 2) + Math.pow((5.58453 - city.getGeoLocation().getLang()), 2)) <= 1)
+                {
                     check = true;
-                }}
+                }
+            }
 
         }
         assertThat(check, equalTo(true));

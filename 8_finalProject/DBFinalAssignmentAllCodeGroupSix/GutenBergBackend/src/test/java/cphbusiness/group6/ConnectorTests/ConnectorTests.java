@@ -62,16 +62,16 @@ public class ConnectorTests
         neoConnectorTestObject = new Neo4JConnector();
 
 
-        MongoUserName = "username";
-        MongoPassword = "password";
+        MongoUserName = "mongo";
+        MongoPassword = "jesus";
         MongoConnectionURL = "167.99.237.199:27017";
 
-        NeoUserName = "username";
-        NeoPassword = "password";
+        NeoUserName = "neo4j";
+        NeoPassword = "jesus";
         NeoConnectionURL = "bolt://167.99.237.199:7687";
 
-        PSQLUserName = "username";
-        PSQLPassword = "password";
+        PSQLUserName = "postgres";
+        PSQLPassword = "jesus";
         PSQLConnectionURL = "167.99.237.199:5432";
     }
 

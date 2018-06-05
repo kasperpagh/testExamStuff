@@ -122,7 +122,7 @@ public class SqlTest
         assertThat(list2.size(), equalTo(3));
         assertThat(list2.get(0).toString(), equalTo("{releaseDate=2005-10-01, author={booksWritten=null, name=Hayley, William}, textContent=null, title=Ballads, Founded on Anecdotes Relating to Animals}"));
         assertThat(list.size(), equalTo(40));
-        assertThat(list.get(0).toString(), equalTo("{cityName=As, geoLocation={lang=5.58453, lat=51.00755}}"));
+        assertThat(list.get(0).toString(), equalTo("{cityName=As, geoLocation={lang=10.2, lat=63.96667}}"));
     }
 
     @Test
